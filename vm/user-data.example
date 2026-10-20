@@ -1,0 +1,17 @@
+#cloud-config
+hostname: soc-victim-01
+manage_etc_hosts: true
+users:
+  - name: analyst
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: PASTE_HASH_FROM_mkpasswd_HERE
+    ssh_pwauth: true
+package_update: true
+packages:
+  - openssh-server
+  - curl
+runcmd:
+  - sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
+  - systemctl restart ssh

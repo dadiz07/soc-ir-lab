@@ -41,7 +41,7 @@ formatted like a real IR report.
 
 ## Status
 
-🚧 Phase 1 in progress: SIEM + log analysis foundation.
+⏸️ Phase 1 complete up to agent enrollment (SIEM + victim VM running). Paused; see docs/rebuild.md to resume.
 
 ## Disclaimer
 
